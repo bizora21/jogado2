@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Loja Natural | Dicas de Saúde e Beleza Natural</title>
+    <meta name="description" content="Acompanhe nosso blog com dicas de saúde, beleza natural e receitas saudáveis. Conteúdo exclusivo para você em Moçambique.">
+    <meta name="keywords" content="blog saúde natural, dicas beleza, receitas saudáveis Maputo">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog - Loja Natural">
+    <meta property="og:description" content="Dicas de saúde e beleza natural">
+    <meta property="og:type" content="website">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --primary-green: #4a7c59;
+            --soft-green: #7fb069;
+            --light-green: #b5d99c;
+            --cream: #f7f3e9;
+            --soft-pink: #f4c2c2;
+            --gold: #d4af37;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --light-gray: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles (Same as index) */
+        .header-banner {
+            background: linear-gradient(135deg, var(--primary-green), var(--soft-green));
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            background: var(--light-gray);
+        }
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-nav a:hover {
+            color: var(--primary-green);
+        }
+        
+        .breadcrumb-nav .separator {
+            color: var(--gray);
+        }
+        
+        .breadcrumb-nav .current {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        /* Blog Page */
+        .blog-page {
+            padding: 60px 0;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .blog-title {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .blog-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Categories */
+        .categories-section {
+            margin-bottom: 50px;
+        }
+        
+        .categories-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .category-tag {
+            padding: 8px 20px;
+            background: var(--light-gray);
+            border-radius: 25px;
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .category-tag:hover,
+        .category-tag.active {
+            background: var(--primary-green);
+            color: white;
+        }
+        
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .blog-category {
+            background: var(--light-green);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .blog-title-card {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+        
+        .blog-excerpt {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s;
+        }
+        
+        .read-more:hover {
+            gap: 10px;
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-green), var(--soft-green));
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .newsletter-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+        }
+        
+        .newsletter-form button {
+            padding: 15px 30px;
+            background: var(--gold);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #c19610;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Footer (Same as index) */
+        .main-footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--light-green);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--light-green);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #999;
+        }
+        
+        /* Success Message */
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-green);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 10000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+        
+        .success-message.show {
+            transform: translateX(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 32px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Banner -->
+    <div class="header-banner">
+        🚚 Frete Grátis para Maputo, Matola e Beira | 💰 Pague na Entrega - Sem Risco!
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span>🌿</span>
+                    <span>Loja Natural</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="blog.html" style="color: var(--primary-green);">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar produtos...">
+                        <button type="button"><i class="bi bi-search"></i></button>
+                    </div>
+                    <a href="checkout.html" class="cart-icon">
+                        <i class="bi bi-cart3" style="font-size: 24px; color: var(--primary-green);"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Início</a>
+                <span class="separator">/</span>
+                <span class="current">Blog</span>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Blog Page -->
+    <main class="blog-page">
+        <div class="container">
+            <!-- Blog Header -->
+            <section class="blog-header" data-aos="fade-up">
+                <h1 class="blog-title">Nosso Blog</h1>
+                <p class="blog-subtitle">Dicas, receitas e informações sobre saúde e bem-estar natural</p>
+            </section>
+            
+            <!-- Categories -->
+            <section class="categories-section" data-aos="fade-up" data-aos-delay="100">
+                <div class="categories-grid">
+                    <a href="#" class="category-tag active">Todos</a>
+                    <a href="#" class="category-tag">Skincare</a>
+                    <a href="#" class="category-tag">Saúde</a>
+                    <a href="#" class="category-tag">Receitas</a>
+                    <a href="#" class="category-tag">Bem-estar</a>
+                    <a href="#" class="category-tag">Dicas</a>
+                </div>
+            </section>
+            
+            <!-- Blog Grid -->
+            <section class="blog-grid">
+                <!-- Article 1 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://picsum.photos/seed/skincare1/400/250" alt="Cuidados com a Pele" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Skincare</span>
+                            <span><i class="bi bi-calendar3"></i> 15 Jan 2024</span>
+                            <span><i class="bi bi-clock"></i> 5 min</span>
+                        </div>
+                        <h3 class="blog-title-card">5 Passos para uma Rotina de Skincare Natural</h3>
+                        <p class="blog-excerpt">Descubra como criar uma rotina de cuidados com a pele usando apenas produtos naturais. Dicas simples e eficazes para todos os tipos de pele...</p>
+                        <a href="#" class="read-more">Ler mais <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Article 2 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://picsum.photos/seed/receita1/400/250" alt="Receita Saudável" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Receitas</span>
+                            <span><i class="bi bi-calendar3"></i> 12 Jan 2024</span>
+                            <span><i class="bi bi-clock"></i> 8 min</span>
+                        </div>
+                        <h3 class="blog-title-card">Suco Detox: Receita para Desintoxicar o Corpo</h3>
+                        <p class="blog-excerpt">Aprenda a preparar um suco detox poderoso com ingredientes fáceis de encontrar em Moçambique. Perfeito para começar o dia com energia...</p>
+                        <a href="#" class="read-more">Ler mais <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Article 3 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://picsum.photos/seed/bemestar1/400/250" alt="Meditação" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Bem-estar</span>
+                            <span><i class="bi bi-calendar3"></i> 10 Jan 2024</span>
+                            <span><i class="bi bi-clock"></i> 6 min</span>
+                        </div>
+                        <h3 class="blog-title-card">Meditação para Iniciantes: Guia Completo</h3>
+                        <p class="blog-excerpt">A meditação pode transformar sua vida. Aprenda técnicas simples para começar a meditar hoje mesmo, mesmo com uma rotina agitada...</p>
+                        <a href="#" class="read-more">Ler mais <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Article 4 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://picsum.photos/seed/saude1/400/250" alt="Alimentação Saudável" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Saúde</span>
+                            <span><i class="bi bi-calendar3"></i> 8 Jan 2024</span>
+                            <span><i class="bi bi-clock"></i> 7 min</span>
+                        </div>
+                        <h3 class="blog-title-card">Alimentação Saudável: O Que Comer no Dia a Dia</h3>
+                        <p class="blog-excerpt">Descubra quais alimentos priorizar para uma alimentação equilibrada. Dicas práticas para incluir mais nutrientes nas suas refeições...</p>
+                        <a href="#" class="read-more">Ler mais <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Article 5 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://picsum.photos/seed/cosmeticos1/400/250" alt="Cosméticos Naturais" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Skincare</span>
+                            <span><i class="bi bi-calendar3"></i> 5 Jan 2024</span>
+                            <span><i class="bi bi-clock"></i> 4 min</span>
+                        </div>
+                        <h3 class="blog-title-card">Benefícios dos Cosméticos Naturais</h3>
+                        <p class="blog-excerpt">Por que escolher cosméticos naturais? Conheça os benefícios para sua pele e para o meio ambiente. Dicas para identificar produtos de qualidade...</p>
+                        <a href="#" class="read-more">Ler mais <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Article 6 -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://picsum.photos/seed/dicas1/400/250" alt="Dicas de Saúde" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Dicas</span>
+                            <span><i class="bi bi-calendar3"></i> 3 Jan 2024</span>
+                            <span><i class="bi bi-clock"></i> 5 min</span>
+                        </div>
+                        <h3 class="blog-title-card">10 Hábitos para uma Vida Mais Saudável</h3>
+                        <p class="blog-excerpt">Pequenas mudanças podem fazer grande diferença na sua saúde. Confira 10 hábitos simples que você pode adotar hoje mesmo...</p>
+                        <a href="#" class="read-more">Ler mais <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
+            </section>
+            
+            <!-- Newsletter Section -->
+            <section class="newsletter-section" data-aos="fade-up">
+                <h2 class="newsletter-title">Receba Nossas Dicas</h2>
+                <p class="newsletter-subtitle">Cadastre-se e receba conteúdo exclusivo sobre saúde e bem-estar natural</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre a Loja Natural</h3>
+                    <p>Somos uma loja especializada em produtos naturais e utensílios de cozinha saudáveis para toda a família.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="produtos.html">Todos os Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos-uso.html">Termos de Uso</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="bi bi-telephone"></i> +258 86 318 1415</p>
+                    <p><i class="bi bi-whatsapp"></i> +258 86 318 1415</p>
+                    <p><i class="bi bi-envelope"></i> info@lojanatural.co.mz</p>
+                    <p><i class="bi bi-geo-alt"></i> Maputo, Moçambique</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Loja Natural. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/258863181415?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." 
+       class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <i class="bi bi-check-circle" style="margin-right: 10px;"></i>
+        Cadastro realizado com sucesso!
+    </div>
+    
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Category filter
+        document.querySelectorAll('.category-tag').forEach(tag => {
+            tag.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+                
+                // In a real application, this would filter the articles
+                console.log('Filter by category:', tag.textContent);
+            });
+        });
+        
+        // Newsletter handler
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Hide message after 3 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 3000);
+            
+            // Reset form
+            event.target.reset();
+        }
+        
+        // Search functionality
+        document.querySelector('.search-bar button').addEventListener('click', () => {
+            const searchTerm = document.querySelector('.search-bar input').value;
+            if (searchTerm) {
+                window.location.href = `produtos.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        });
+        
+        document.querySelector('.search-bar input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const searchTerm = e.target.value;
+                if (searchTerm) {
+                    window.location.href = `produtos.html?search=${encodeURIComponent(searchTerm)}`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

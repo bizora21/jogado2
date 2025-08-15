@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Loja Natural | Cosméticos Naturais e Utensílios de Cozinha</title>
+    <meta name="description" content="Nossa linha completa de cosméticos naturais e utensílios de cozinha saudáveis. Entrega em Maputo, Matola e Beira.">
+    <meta name="keywords" content="produtos naturais Maputo, cosméticos naturais, utensílios cozinha Moçambique">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Produtos - Loja Natural">
+    <meta property="og:description" content="Produtos naturais com entrega em Maputo, Matola e Beira">
+    <meta property="og:type" content="website">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --primary-green: #4a7c59;
+            --soft-green: #7fb069;
+            --light-green: #b5d99c;
+            --cream: #f7f3e9;
+            --soft-pink: #f4c2c2;
+            --gold: #d4af37;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --light-gray: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles (Same as index) */
+        .header-banner {
+            background: linear-gradient(135deg, var(--primary-green), var(--soft-green));
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            background: var(--light-gray);
+        }
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-nav a:hover {
+            color: var(--primary-green);
+        }
+        
+        .breadcrumb-nav .separator {
+            color: var(--gray);
+        }
+        
+        .breadcrumb-nav .current {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        /* Products Page */
+        .products-page {
+            padding: 40px 0;
+        }
+        
+        .products-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .products-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .products-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+        }
+        
+        /* Filters */
+        .filters-section {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .filters-sidebar {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 15px;
+            height: fit-content;
+        }
+        
+        .filter-group {
+            margin-bottom: 25px;
+        }
+        
+        .filter-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        
+        .filter-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-green);
+        }
+        
+        .filter-option label {
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .price-range {
+            margin-top: 10px;
+        }
+        
+        .price-inputs {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .price-inputs input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        /* Products Grid */
+        .products-main {
+            position: relative;
+        }
+        
+        .products-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .products-count {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .sort-dropdown {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .view-options {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .view-btn {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .view-btn.active {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--gold);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .product-name {
+            font-size: 18px;
+            margin: 10px 0;
+            color: var(--dark);
+        }
+        
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .stars {
+            color: var(--gold);
+        }
+        
+        .rating-count {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .whatsapp-btn {
+            width: 100%;
+            padding: 12px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 50px;
+        }
+        
+        .page-btn {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .page-btn:hover {
+            background: var(--light-gray);
+        }
+        
+        .page-btn.active {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Footer (Same as index) */
+        .main-footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--light-green);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--light-green);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #999;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .filters-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters-sidebar {
+                display: none;
+            }
+            
+            .products-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Banner -->
+    <div class="header-banner">
+        🚚 Frete Grátis para Maputo, Matola e Beira | 💰 Pague na Entrega - Sem Risco!
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span>🌿</span>
+                    <span>Loja Natural</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html" style="color: var(--primary-green);">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar produtos...">
+                        <button type="button"><i class="bi bi-search"></i></button>
+                    </div>
+                    <a href="checkout.html" class="cart-icon">
+                        <i class="bi bi-cart3" style="font-size: 24px; color: var(--primary-green);"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Início</a>
+                <span class="separator">/</span>
+                <span class="current">Produtos</span>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Products Page -->
+    <main class="products-page">
+        <div class="container">
+            <div class="products-header">
+                <h1 class="products-title">Nossos Produtos</h1>
+                <p class="products-subtitle">Descubra nossa linha completa de produtos naturais para sua saúde e bem-estar</p>
+            </div>
+            
+            <div class="filters-section">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3 class="filter-title">
+                            Categorias
+                            <i class="bi bi-chevron-down"></i>
+                        </h3>
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="cat-cozinha" checked>
+                                <label for="cat-cozinha">Cozinha (12)</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="cat-cosmeticos" checked>
+                                <label for="cat-cosmeticos">Cosméticos (8)</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="cat-saude">
+                                <label for="cat-saude">Saúde (5)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3 class="filter-title">
+                            Preço
+                            <i class="bi bi-chevron-down"></i>
+                        </h3>
+                        <div class="price-range">
+                            <div class="price-inputs">
+                                <input type="number" placeholder="Min" min="0">
+                                <input type="number" placeholder="Max" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3 class="filter-title">
+                            Avaliação
+                            <i class="bi bi-chevron-down"></i>
+                        </h3>
+                        <div class="filter-options">
+                            <div class="filter-option">
+                                <input type="checkbox" id="rating-5">
+                                <label for="rating-5">★★★★★ (5 estrelas)</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="rating-4">
+                                <label for="rating-4">★★★★☆ (4+ estrelas)</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="rating-3">
+                                <label for="rating-3">★★★☆☆ (3+ estrelas)</label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Products Main -->
+                <div class="products-main">
+                    <div class="products-toolbar">
+                        <span class="products-count">Mostrando 20 de 25 produtos</span>
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <select class="sort-dropdown">
+                                <option>Mais Relevantes</option>
+                                <option>Mais Vendidos</option>
+                                <option>Mais Novos</option>
+                                <option>Menor Preço</option>
+                                <option>Maior Preço</option>
+                            </select>
+                            <div class="view-options">
+                                <button class="view-btn active">
+                                    <i class="bi bi-grid-3x3-gap"></i>
+                                </button>
+                                <button class="view-btn">
+                                    <i class="bi bi-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="products-grid">
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <span class="product-badge">Mais Vendido</span>
+                            <img src="https://picsum.photos/seed/cortador/300/250" alt="Cortador de Vegetais" class="product-image">
+                            <div class="product-info">
+                                <p class="product-category">Cozinha</p>
+                                <h3 class="product-name">Cortador de Vegetais Multiuso</h3>
+                                <p class="product-price">MT 850</p>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-count">(127)</span>
+                                </div>
+                                <button class="whatsapp-btn" onclick="sendWhatsApp('Cortador de Vegetais Multiuso', 850)">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Comprar via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <img src="https://picsum.photos/seed/pressalho/300/250" alt="Esmagador de Alho" class="product-image">
+                            <div class="product-info">
+                                <p class="product-category">Cozinha</p>
+                                <h3 class="product-name">Esmagador de Alho Premium</h3>
+                                <p class="product-price">MT 650</p>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★☆</div>
+                                    <span class="rating-count">(89)</span>
+                                </div>
+                                <button class="whatsapp-btn" onclick="sendWhatsApp('Esmagador de Alho Premium', 650)">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Comprar via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <span class="product-badge">Novidade</span>
+                            <img src="https://picsum.photos/seed/cosmetico1/300/250" alt="Sérum Facial" class="product-image">
+                            <div class="product-info">
+                                <p class="product-category">Cosméticos</p>
+                                <h3 class="product-name">Sérum Facial Anti-idade</h3>
+                                <p class="product-price">MT 1,200</p>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-count">(203)</span>
+                                </div>
+                                <button class="whatsapp-btn" onclick="sendWhatsApp('Sérum Facial Anti-idade', 1200)">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Comprar via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 4 -->
+                        <div class="product-card">
+                            <img src="https://picsum.photos/seed/cosmetico2/300/250" alt="Creme Hidratante" class="product-image">
+                            <div class="product-info">
+                                <p class="product-category">Cosméticos</p>
+                                <h3 class="product-name">Creme Hidratante Corporal</h3>
+                                <p class="product-price">MT 950</p>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★☆</div>
+                                    <span class="rating-count">(156)</span>
+                                </div>
+                                <button class="whatsapp-btn" onclick="sendWhatsApp('Creme Hidratante Corporal', 950)">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Comprar via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 5 -->
+                        <div class="product-card">
+                            <img src="https://picsum.photos/seed/ralador/300/250" alt="Ralador Multiuso" class="product-image">
+                            <div class="product-info">
+                                <p class="product-category">Cozinha</p>
+                                <h3 class="product-name">Ralador Multiuso 5 em 1</h3>
+                                <p class="product-price">MT 750</p>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-count">(94)</span>
+                                </div>
+                                <button class="whatsapp-btn" onclick="sendWhatsApp('Ralador Multiuso 5 em 1', 750)">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Comprar via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 6 -->
+                        <div class="product-card">
+                            <span class="product-badge">Promoção</span>
+                            <img src="https://picsum.photos/seed/oleo/300/250" alt="Óleo Essencial" class="product-image">
+                            <div class="product-info">
+                                <p class="product-category">Cosméticos</p>
+                                <h3 class="product-name">Óleo Essencial de Lavanda</h3>
+                                <p class="product-price">MT 680</p>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★☆</div>
+                                    <span class="rating-count">(67)</span>
+                                </div>
+                                <button class="whatsapp-btn" onclick="sendWhatsApp('Óleo Essencial de Lavanda', 680)">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Comprar via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 7 -->
+                        <div class="product-card">
+                            <img src="https://picsum.photos/seed/espremedor/300/250" alt="Espremedor" class="product-image">
+                            <div class="product-info">
+                                <p class="product-category">Cozinha</p>
+                                <h3 class="product-name">Espremedor de Frutas Manual</h3>
+                                <p class="product-price">MT 920</p>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span class="rating-count">(112)</span>
+                                </div>
+                                <button class="whatsapp-btn" onclick="sendWhatsApp('Espremedor de Frutas Manual', 920)">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Comprar via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 8 -->
+                        <div class="product-card">
+                            <img src="https://picsum.photos/seed/mascara/300/250" alt="Máscara Facial" class="product-image">
+                            <div class="product-info">
+                                <p class="product-category">Cosméticos</p>
+                                <h3 class="product-name">Máscara Facial Detox</h3>
+                                <p class="product-price">MT 580</p>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★☆</div>
+                                    <span class="rating-count">(78)</span>
+                                </div>
+                                <button class="whatsapp-btn" onclick="sendWhatsApp('Máscara Facial Detox', 580)">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Comprar via WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre a Loja Natural</h3>
+                    <p>Somos uma loja especializada em produtos naturais e utensílios de cozinha saudáveis para toda a família.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="produtos.html">Todos os Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos-uso.html">Termos de Uso</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="bi bi-telephone"></i> +258 86 318 1415</p>
+                    <p><i class="bi bi-whatsapp"></i> +258 86 318 1415</p>
+                    <p><i class="bi bi-envelope"></i> info@lojanatural.co.mz</p>
+                    <p><i class="bi bi-geo-alt"></i> Maputo, Moçambique</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Loja Natural. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/258863181415?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." 
+       class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    <script>
+        // WhatsApp Function
+        function sendWhatsApp(productName, price) {
+            const message = `Olá! Gostaria de comprar o produto: ${productName} - MT ${price}. Pague na entrega.`;
+            const whatsappUrl = `https://wa.me/258863181415?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Filter toggle
+        document.querySelectorAll('.filter-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const icon = title.querySelector('i');
+                icon.classList.toggle('bi-chevron-down');
+                icon.classList.toggle('bi-chevron-up');
+            });
+        });
+        
+        // Search functionality
+        document.querySelector('.search-bar button').addEventListener('click', () => {
+            const searchTerm = document.querySelector('.search-bar input').value;
+            if (searchTerm) {
+                window.location.href = `produtos.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        });
+        
+        document.querySelector('.search-bar input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const searchTerm = e.target.value;
+                if (searchTerm) {
+                    window.location.href = `produtos.html?search=${encodeURIComponent(searchTerm)}`;
+                }
+            }
+        });
+        
+        // View toggle
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

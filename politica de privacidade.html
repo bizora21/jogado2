@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Loja Natural</title>
+    <meta name="description" content="Política de privacidade da Loja Natural. Saiba como protegemos seus dados pessoais em Moçambique.">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --primary-green: #4a7c59;
+            --soft-green: #7fb069;
+            --light-green: #b5d99c;
+            --cream: #f7f3e9;
+            --soft-pink: #f4c2c2;
+            --gold: #d4af37;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --light-gray: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles (Same as index) */
+        .header-banner {
+            background: linear-gradient(135deg, var(--primary-green), var(--soft-green));
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            background: var(--light-gray);
+        }
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-nav a:hover {
+            color: var(--primary-green);
+        }
+        
+        .breadcrumb-nav .separator {
+            color: var(--gray);
+        }
+        
+        .breadcrumb-nav .current {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        /* Privacy Policy Page */
+        .privacy-page {
+            padding: 60px 0;
+        }
+        
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .privacy-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .privacy-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+        }
+        
+        .privacy-content {
+            background: var(--light-gray);
+            padding: 50px;
+            border-radius: 15px;
+        }
+        
+        .privacy-section {
+            margin-bottom: 40px;
+        }
+        
+        .privacy-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .privacy-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+        
+        .privacy-section h3 {
+            font-size: 20px;
+            margin: 25px 0 15px;
+            color: var(--dark);
+        }
+        
+        .privacy-section p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+        
+        .privacy-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .privacy-section li {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+        
+        .privacy-section strong {
+            color: var(--dark);
+        }
+        
+        .last-updated {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Footer (Same as index) */
+        .main-footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--light-green);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--light-green);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #999;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .privacy-title {
+                font-size: 28px;
+            }
+            
+            .privacy-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Banner -->
+    <div class="header-banner">
+        🚚 Frete Grátis para Maputo, Matola e Beira | 💰 Pague na Entrega - Sem Risco!
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span>🌿</span>
+                    <span>Loja Natural</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar produtos...">
+                        <button type="button"><i class="bi bi-search"></i></button>
+                    </div>
+                    <a href="checkout.html" class="cart-icon">
+                        <i class="bi bi-cart3" style="font-size: 24px; color: var(--primary-green);"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Início</a>
+                <span class="separator">/</span>
+                <span class="current">Política de Privacidade</span>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Privacy Policy Page -->
+    <main class="privacy-page">
+        <div class="container">
+            <div class="privacy-header">
+                <h1 class="privacy-title">Política de Privacidade</h1>
+                <p class="privacy-subtitle">Compromisso com a proteção dos seus dados pessoais</p>
+            </div>
+            
+            <div class="privacy-content">
+                <div class="privacy-section">
+                    <h2>1. Introdução</h2>
+                    <p>A <strong>Loja Natural</strong> respeita sua privacidade e está comprometida em proteger seus dados pessoais. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e compartilhamos suas informações quando você utiliza nossos serviços em Moçambique.</p>
+                    <p>Ao utilizar nosso site e serviços, você concorda com a coleta e uso de informações de acordo com esta política.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>2. Informações que Coletamos</h2>
+                    <h3>2.1. Informações Pessoais</h3>
+                    <p>Coletamos as seguintes informações quando você interage conosco:</p>
+                    <ul>
+                        <li><strong>Nome completo</strong></li>
+                        <li><strong>Número de telefone</strong> (principalmente para WhatsApp)</li>
+                        <li><strong>Endereço de e-mail</strong> (quando fornecido)</li>
+                        <li><strong>Endereço de entrega</strong></li>
+                        <li><strong>Informações de pagamento</strong> (quando aplicável)</li>
+                    </ul>
+                    
+                    <h3>2.2. Informações de Uso</h3>
+                    <p>Também coletamos informações automaticamente sobre sua interação com nosso site:</p>
+                    <ul>
+                        <li>Endereço IP</li>
+                        <li>Tipo de navegador e dispositivo</li>
+                        <li>Páginas visitadas</li>
+                        <li>Tempo de navegação</li>
+                        <li>Informações de localização (quando permitido)</li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>3. Como Usamos Suas Informações</h2>
+                    <p>Utilizamos suas informações para:</p>
+                    <ul>
+                        <li><strong>Processar e entregar seus pedidos</strong></li>
+                        <li><strong>Comunicar-se com você sobre seu pedido</strong> (via WhatsApp ou telefone)</li>
+                        <li><strong>Melhorar nossos produtos e serviços</strong></li>
+                        <li><strong>Enviar informações sobre promoções e novidades</strong> (com seu consentimento)</li>
+                        <li><strong>Garantir a segurança do nosso site</strong></li>
+                        <li><strong>Cumprir obrigações legais</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>4. Compartilhamento de Informações</h2>
+                    <p>Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros, exceto nas seguintes situações:</p>
+                    <ul>
+                        <li><strong>Parceiros de entrega</strong> - Para entregar seus produtos</li>
+                        <li><strong>Prestadores de serviços</strong> - Que nos ajudam a operar nosso negócio</li>
+                        <li><strong>Quando exigido por lei</strong> - Para cumprir obrigações legais ou regulatórias</li>
+                        <li><strong>Com seu consentimento</strong> - Quando você autoriza explicitamente</li>
+                    </ul>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>5. Armazenamento e Segurança</h2>
+                    <p>Implementamos medidas de segurança adequadas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. Estas medidas incluem:</p>
+                    <ul>
+                        <li>Criptografia de dados sensíveis</li>
+                        <li>Controle de acesso restrito</li>
+                        <li>Atualizações regulares de segurança</li>
+                        <li>Formação da equipe sobre proteção de dados</li>
+                    </ul>
+                    <p>Seus dados são armazenados em servidores seguros e mantidos apenas pelo tempo necessário para cumprir os fins para os quais foram coletados.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>6. Seus Direitos</h2>
+                    <p>De acordo com a legislação moçambicana de proteção de dados, você tem os seguintes direitos:</p>
+                    <ul>
+                        <li><strong>Acesso</strong> - Solicitar uma cópia de seus dados pessoais</li>
+                        <li><strong>Correção</strong> - Solicitar a correção de dados incorretos</li>
+                        <li><strong>Exclusão</strong> - Solicitar a exclusão de seus dados (quando aplicável)</li>
+                        <li><strong>Restrição</strong> - Limitar como usamos seus dados</li>
+                        <li><strong>Portabilidade</strong> - Receber seus dados em formato transferível</li>
+                        <li><strong>Oposição</strong> - Opor-se ao processamento de seus dados</li>
+                    </ul>
+                    <p>Para exercer esses direitos, entre em contato conosco através dos canais disponíveis.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>7. Cookies</h2>
+                    <p>Utilizamos cookies para melhorar sua experiência em nosso site. Os cookies são pequenos arquivos de texto armazenados em seu dispositivo que nos ajudam a:</p>
+                    <ul>
+                        <li>Lembrar suas preferências</li>
+                        <li>Entender como você usa nosso site</li>
+                        <li>Personalizar seu conteúdo</li>
+                        <li>Analisar o tráfego do site</li>
+                    </ul>
+                    <p>Você pode gerenciar suas preferências de cookies através das configurações do seu navegador.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>8. Links para Terceiros</h2>
+                    <p>Nosso site pode conter links para sites de terceiros. Esta Política de Privacidade não se aplica a esses sites. Recomendamos que você revise as políticas de privacidade desses sites antes de fornecer qualquer informação pessoal.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>9. Alterações nesta Política</h2>
+                    <p>Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre quaisquer alterações significativas através de nosso site ou por outros meios de comunicação. O uso continuado de nossos serviços após tais alterações constitui sua aceitação da nova política.</p>
+                </div>
+                
+                <div class="privacy-section">
+                    <h2>10. Contato</h2>
+                    <p>Se você tiver dúvidas ou preocupações sobre esta Política de Privacidade ou sobre como tratamos seus dados pessoais, entre em contato conosco:</p>
+                    <ul>
+                        <li><strong>E-mail:</strong> info@lojanatural.co.mz</li>
+                        <li><strong>Telefone:</strong> +258 86 318 1415</li>
+                        <li><strong>WhatsApp:</strong> +258 86 318 1415</li>
+                        <li><strong>Endereço:</strong> Avenida Julius Nyerere, 1234, Maputo, Moçambique</li>
+                    </ul>
+                </div>
+                
+                <div class="last-updated">
+                    <p><strong>Última atualização:</strong> 15 de janeiro de 2024</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre a Loja Natural</h3>
+                    <p>Somos uma loja especializada em produtos naturais e utensílios de cozinha saudáveis para toda a família.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="produtos.html">Todos os Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos-uso.html">Termos de Uso</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="bi bi-telephone"></i> +258 86 318 1415</p>
+                    <p><i class="bi bi-whatsapp"></i> +258 86 318 1415</p>
+                    <p><i class="bi bi-envelope"></i> info@lojanatural.co.mz</p>
+                    <p><i class="bi bi-geo-alt"></i> Maputo, Moçambique</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Loja Natural. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/258863181415?text=Olá!%20Gostaria%20de%20tirar%20dúvidas%20sobre%20a%20política%20de%20privacidade." 
+       class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    <script>
+        // Search functionality
+        document.querySelector('.search-bar button').addEventListener('click', () => {
+            const searchTerm = document.querySelector('.search-bar input').value;
+            if (searchTerm) {
+                window.location.href = `produtos.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        });
+        
+        document.querySelector('.search-bar input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const searchTerm = e.target.value;
+                if (searchTerm) {
+                    window.location.href = `produtos.html?search=${encodeURIComponent(searchTerm)}`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

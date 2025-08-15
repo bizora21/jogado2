@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Loja Natural</title>
+    <meta name="description" content="Finalize sua compra na Loja Natural. Pague na entrega com frete grátis para Maputo, Matola e Beira.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --primary-green: #4a7c59;
+            --soft-green: #7fb069;
+            --light-green: #b5d99c;
+            --cream: #f7f3e9;
+            --soft-pink: #f4c2c2;
+            --gold: #d4af37;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --light-gray: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles (Same as index) */
+        .header-banner {
+            background: linear-gradient(135deg, var(--primary-green), var(--soft-green));
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            background: var(--light-gray);
+        }
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-nav a:hover {
+            color: var(--primary-green);
+        }
+        
+        .breadcrumb-nav .separator {
+            color: var(--gray);
+        }
+        
+        .breadcrumb-nav .current {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        /* Checkout Page */
+        .checkout-page {
+            padding: 60px 0;
+        }
+        
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .checkout-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .checkout-subtitle {
+            font-size: 18px;
+            color: var(--gray);
+        }
+        
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+        }
+        
+        /* Checkout Form */
+        .checkout-form {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+        }
+        
+        .form-section {
+            margin-bottom: 40px;
+        }
+        
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .form-section h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        /* Order Summary */
+        .order-summary {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .order-summary h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .order-items {
+            margin-bottom: 25px;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-info {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .item-quantity {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .item-price {
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+        
+        .order-totals {
+            border-top: 2px solid var(--light-gray);
+            padding-top: 20px;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .total-row.final {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .free-shipping-badge {
+            background: var(--light-green);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+        
+        .payment-method {
+            background: var(--cream);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .payment-method h4 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+        
+        .place-order-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .place-order-btn:hover {
+            background: var(--soft-green);
+        }
+        
+        /* Success Message */
+        .success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+        
+        .success-modal.show {
+            display: flex;
+        }
+        
+        .success-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+        
+        .success-icon {
+            font-size: 64px;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+        
+        .success-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .success-message {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .success-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .success-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .success-btn.primary {
+            background: var(--primary-green);
+            color: white;
+        }
+        
+        .success-btn.primary:hover {
+            background: var(--soft-green);
+        }
+        
+        .success-btn.secondary {
+            background: var(--light-gray);
+            color: var(--dark);
+        }
+        
+        .success-btn.secondary:hover {
+            background: var(--gray);
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* Footer (Same as index) */
+        .main-footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--light-green);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--light-green);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #999;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .checkout-title {
+                font-size: 28px;
+            }
+            
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-summary {
+                position: static;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Banner -->
+    <div class="header-banner">
+        🚚 Frete Grátis para Maputo, Matola e Beira | 💰 Pague na Entrega - Sem Risco!
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span>🌿</span>
+                    <span>Loja Natural</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar produtos...">
+                        <button type="button"><i class="bi bi-search"></i></button>
+                    </div>
+                    <a href="checkout.html" class="cart-icon">
+                        <i class="bi bi-cart3" style="font-size: 24px; color: var(--primary-green);"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Início</a>
+                <span class="separator">/</span>
+                <a href="produtos.html">Produtos</a>
+                <span class="separator">/</span>
+                <span class="current">Finalizar Compra</span>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Checkout Page -->
+    <main class="checkout-page">
+        <div class="container">
+            <div class="checkout-header">
+                <h1 class="checkout-title">Finalizar Compra</h1>
+                <p class="checkout-subtitle">Preencha seus dados para concluir seu pedido</p>
+            </div>
+            
+            <div class="checkout-container">
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <form onsubmit="handleCheckout(event)">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3><i class="bi bi-person"></i> Informações Pessoais</h3>
+                            <div class="form-group">
+                                <label for="fullName">Nome Completo *</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone/WhatsApp *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+258 XX XXX XXXX" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Delivery Address -->
+                        <div class="form-section">
+                            <h3><i class="bi bi-geo-alt"></i> Endereço de Entrega</h3>
+                            <div class="form-group">
+                                <label for="city">Cidade *</label>
+                                <select id="city" name="city" required onchange="updateShipping()">
+                                    <option value="">Selecione a cidade</option>
+                                    <option value="maputo">Maputo</option>
+                                    <option value="matola">Matola</option>
+                                    <option value="beira">Beira</option>
+                                    <option value="other">Outra Cidade</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="neighborhood">Bairro *</label>
+                                <input type="text" id="neighborhood" name="neighborhood" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="street">Rua/Avenida *</label>
+                                <input type="text" id="street" name="street" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="number">Número</label>
+                                <input type="text" id="number" name="number">
+                            </div>
+                            <div class="form-group">
+                                <label for="reference">Ponto de Referência</label>
+                                <input type="text" id="reference" name="reference" placeholder="Ex: Próximo ao supermercado">
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Information -->
+                        <div class="form-section">
+                            <h3><i class="bi bi-chat-text"></i> Informações Adicionais</h3>
+                            <div class="form-group">
+                                <label for="notes">Observações</label>
+                                <textarea id="notes" name="notes" rows="3" placeholder="Alguma informação adicional para a entrega?"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Resumo do Pedido</h3>
+                    
+                    <div class="order-items">
+                        <div class="order-item">
+                            <div class="item-info">
+                                <div class="item-name">Cortador de Vegetais Multiuso</div>
+                                <div class="item-quantity">Quantidade: 1</div>
+                            </div>
+                            <div class="item-price">MT 850</div>
+                        </div>
+                        <div class="order-item">
+                            <div class="item-info">
+                                <div class="item-name">Esmagador de Alho Premium</div>
+                                <div class="item-quantity">Quantidade: 1</div>
+                            </div>
+                            <div class="item-price">MT 650</div>
+                        </div>
+                        <div class="order-item">
+                            <div class="item-info">
+                                <div class="item-name">Sérum Facial Anti-idade</div>
+                                <div class="item-quantity">Quantidade: 1</div>
+                            </div>
+                            <div class="item-price">MT 1,200</div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span>MT 2,700</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Frete</span>
+                            <span id="shippingCost">Grátis</span>
+                        </div>
+                        <div class="total-row final">
+                            <span>Total</span>
+                            <span id="totalAmount">MT 2,700</span>
+                        </div>
+                    </div>
+                    
+                    <div class="free-shipping-badge" id="freeShippingBadge">
+                        <i class="bi bi-truck"></i> Frete Grátis para sua região!
+                    </div>
+                    
+                    <div class="payment-method">
+                        <h4><i class="bi bi-cash"></i> Pagamento na Entrega</h4>
+                        <p>Pague apenas quando receber seus produtos</p>
+                    </div>
+                    
+                    <button type="submit" class="place-order-btn" onclick="handleCheckout(event)">
+                        <i class="bi bi-check-circle"></i>
+                        Confirmar Pedido
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <div class="success-icon">✅</div>
+            <h2 class="success-title">Pedido Confirmado!</h2>
+            <p class="success-message">
+                Seu pedido foi recebido com sucesso. Entraremos em contato via WhatsApp em breve para confirmar os detalhes da entrega.
+            </p>
+            <div class="success-actions">
+                <button class="success-btn primary" onclick="closeModal()">Continuar Comprando</button>
+                <button class="success-btn secondary" onclick="sendWhatsAppOrder()">Enviar via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre a Loja Natural</h3>
+                    <p>Somos uma loja especializada em produtos naturais e utensílios de cozinha saudáveis para toda a família.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="produtos.html">Todos os Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos-uso.html">Termos de Uso</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="bi bi-telephone"></i> +258 86 318 1415</p>
+                    <p><i class="bi bi-whatsapp"></i> +258 86 318 1415</p>
+                    <p><i class="bi bi-envelope"></i> info@lojanatural.co.mz</p>
+                    <p><i class="bi bi-geo-alt"></i> Maputo, Moçambique</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Loja Natural. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/258863181415?text=Olá!%20Gostaria%20de%20finalizar%20minha%20compra." 
+       class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    
+    <script>
+        // Update shipping based on city
+        function updateShipping() {
+            const city = document.getElementById('city').value;
+            const shippingCost = document.getElementById('shippingCost');
+            const freeShippingBadge = document.getElementById('freeShippingBadge');
+            const totalAmount = document.getElementById('totalAmount');
+            
+            const subtotal = 2700; // This should be calculated dynamically
+            
+            if (city === 'maputo' || city === 'matola' || city === 'beira') {
+                shippingCost.textContent = 'Grátis';
+                freeShippingBadge.style.display = 'block';
+                totalAmount.textContent = `MT ${subtotal}`;
+            } else if (city === 'other') {
+                shippingCost.textContent = 'MT 150';
+                freeShippingBadge.style.display = 'none';
+                totalAmount.textContent = `MT ${subtotal + 150}`;
+            } else {
+                shippingCost.textContent = '-';
+                freeShippingBadge.style.display = 'none';
+                totalAmount.textContent = `MT ${subtotal}`;
+            }
+        }
+        
+        // Handle checkout
+        function handleCheckout(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const form = event.target.closest('form');
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Validate required fields
+            if (!data.fullName || !data.phone || !data.city || !data.neighborhood || !data.street) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+            
+            // Show success modal
+            document.getElementById('successModal').classList.add('show');
+            
+            // In a real application, you would send the order data to a server here
+            console.log('Order data:', data);
+        }
+        
+        // Close modal
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('show');
+            window.location.href = 'index.html';
+        }
+        
+        // Send WhatsApp order
+        function sendWhatsAppOrder() {
+            const fullName = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const neighborhood = document.getElementById('neighborhood').value;
+            const street = document.getElementById('street').value;
+            
+            const message = `Olá! Gostaria de confirmar meu pedido:\n\n` +
+                `Nome: ${fullName}\n` +
+                `Telefone: ${phone}\n` +
+                `Endereço: ${street}, ${neighborhood}, ${city}\n\n` +
+                `Produtos:\n` +
+                `- Cortador de Vegetais Multiuso - MT 850\n` +
+                `- Esmagador de Alho Premium - MT 650\n` +
+                `- Sérum Facial Anti-idade - MT 1,200\n\n` +
+                `Total: MT 2,700\n` +
+                `Pagamento: Na entrega`;
+            
+            const whatsappUrl = `https://wa.me/258863181415?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            closeModal();
+        }
+        
+        // Search functionality
+        document.querySelector('.search-bar button').addEventListener('click', () => {
+            const searchTerm = document.querySelector('.search-bar input').value;
+            if (searchTerm) {
+                window.location.href = `produtos.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        });
+        
+        document.querySelector('.search-bar input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const searchTerm = e.target.value;
+                if (searchTerm) {
+                    window.location.href = `produtos.html?search=${encodeURIComponent(searchTerm)}`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
