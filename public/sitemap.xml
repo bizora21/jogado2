@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://lojarapidamz.com/</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Products Page -->
+  <url>
+    <loc>https://lojarapidamz.com/produtos</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog -->
+  <url>
+    <loc>https://lojarapidamz.com/blog</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact -->
+  <url>
+    <loc>https://lojarapidamz.com/contato</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- About -->
+  <url>
+    <loc>https://lojarapidamz.com/sobre</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- FAQ -->
+  <url>
+    <loc>https://lojarapidamz.com/faq</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://lojarapidamz.com/privacidade</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://lojarapidamz.com/termos</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Shipping Policy -->
+  <url>
+    <loc>https://lojarapidamz.com/entrega</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Individual Product Pages (examples) -->
+  <url>
+    <loc>https://lojarapidamz.com/produto/cinta-modeladora-premium</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lojarapidamz.com/images/cinta-modeladora.webp</image:loc>
+      <image:title>Cinta Modeladora Premium</image:title>
+      <image:caption>Cinta modeladora de alta qualidade para realçar suas curvas</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://lojarapidamz.com/produto/tapete-decorativo</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lojarapidamz.com/images/tapete-decorativo.webp</image:loc>
+      <image:title>Tapete Decorativo Moderno</image:title>
+      <image:caption>Tapete decorativo para transformar sua casa</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://lojarapidamz.com/produto/cortador-profissional</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lojarapidamz.com/images/cortador-profissional.webp</image:loc>
+      <image:title>Cortador Profissional</image:title>
+      <image:caption>Cortador profissional para facilitar sua vida na cozinha</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://lojarapidamz.com/produto/cabelo-premium</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://lojarapidamz.com/images/cabelo-premium.webp</image:loc>
+      <image:title>Cabelo Feminino Premium</image:title>
+      <image:caption>Cabelo feminino premium para visual deslumbrante</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://lojarapidamz.com/blog/cintas-modeladoras-guia-2024</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://lojarapidamz.com/blog/decoracao-casa-tendencias</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://lojarapidamz.com/blog/cozinha-utensilios-essenciais</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>
+
